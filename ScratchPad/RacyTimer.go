@@ -1,9 +1,9 @@
 package ScratchPad
 
 import (
-	"time"
-	"fmt"
-	"math/rand"
+    "time"
+    "fmt"
+    "math/rand"
 )
 
 // RacyTimer is an exercise in race conditions
