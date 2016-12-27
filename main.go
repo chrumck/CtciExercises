@@ -8,7 +8,7 @@ func main() {
 	//fmt.Println(math.Sqrt(2))
 	//scratchpad.Crawl("http://golang.org/", 10, scratchpad.MakeFakeFetcher())
 
-	var debugger = scratchpad.NewDebugger("debug.log", "debugProf.log")
+	var debugger = scratchpad.NewDebugger("debug.log", "debug_prof.log")
 	defer debugger.Close()
 
 	debugger.Log("Starting...\n")
