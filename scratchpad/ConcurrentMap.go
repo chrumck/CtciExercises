@@ -1,4 +1,4 @@
-package ScratchPad
+package scratchpad
 
 import (
 	"sync"
