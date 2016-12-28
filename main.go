@@ -1,40 +1,24 @@
 package main
 
-import "github.com/chrumck/CtciExercises/scratchpad"
-import "fmt"
+import (
+	"github.com/chrumck/CtciExercises/scratchpad"
+	"github.com/chrumck/CtciExercises/testlogger"
+)
 
 func main() {
 	//fmt.Println(scratchpad.NewtonSqrt(2))
 	//fmt.Println(math.Sqrt(2))
 	//scratchpad.Crawl("http://golang.org/", 10, scratchpad.MakeFakeFetcher())
 
-	var debugger = scratchpad.NewDebugger("debug.log", "debug_prof.log")
-	defer debugger.Close()
+	testLogger := testlogger.New("debug.log", "debug_prof.log")
+	defer testLogger.Close()
 
-	debugger.Log("Starting...\n")
+	testLogger.Println("Starting...")
 
-	var hashedFiles = scratchpad.HashFiles("/media/tomasz/Docs/SoftwareDocs")
+	hashedFiles := scratchpad.HashFilesConcurrent("/media/tomasz/Docs/SoftwareDocs")
 
-	debugger.WriteHeapProfile()
-
-	debugger.Log(fmt.Sprintf("Total unique files: %v\n", len(hashedFiles)))
-
-	duplicateCount := 0
-	for _, filePaths := range hashedFiles {
-		if len(filePaths) > 1 {
-			duplicateCount++
-		}
-	}
-
-	debugger.Log(fmt.Sprintf("Total duplicate occurrences count: %v\n", duplicateCount))
-
-	for fileHash, filePaths := range hashedFiles {
-		if len(filePaths) < 2 {
-			continue
-		}
-		debugger.Log(fmt.Sprintf("Hash:%X - file count: %v\n", fileHash, len(filePaths)))
-		for _, filePath := range filePaths {
-			debugger.Log(fmt.Sprintln("\t" + filePath))
-		}
-	}
+	testLogger.WriteHeapProfile()
+	testLogger.Printf("Total unique files: %v\n", len(hashedFiles))
+	testLogger.Printf("Total duplicate occurences count: %v\n", scratchpad.DuplicatesCount(hashedFiles))
+	// scratchpad.PrintDuplicates(hashedFiles, testLogger)
 }

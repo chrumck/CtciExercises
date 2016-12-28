@@ -12,15 +12,15 @@ type ConcurrentMap struct {
 
 // Add item to concurrent map in a safe way.
 func (cMap *ConcurrentMap) Add(item string) {
-	defer cMap.mux.Unlock()
 	cMap.mux.Lock()
+	defer cMap.mux.Unlock()
 	cMap.mp[item]++
 }
 
 // Exists Checks if item exists in the concurrent map.
 func (cMap *ConcurrentMap) Exists(item string) bool {
-	defer cMap.mux.Unlock()
 	cMap.mux.Lock()
+	defer cMap.mux.Unlock()
 	var _, ok = cMap.mp[item]
 	return ok
 }

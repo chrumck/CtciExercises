@@ -8,13 +8,8 @@ import (
 
 // HashFiles hashes all files and finds file duplicates.
 func HashFiles(dirPath string) (hashResults map[string][]string) {
-	var debugger = NewDebugger("debug_hashfiles.log", "debug_hashfiles_prof.log")
-	defer debugger.Close()
-
 	hashResults = make(map[string][]string)
 	hashFiles(dirPath, hashResults)
-
-	debugger.WriteHeapProfile()
 	return
 }
 
