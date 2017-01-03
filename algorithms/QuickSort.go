@@ -1,2 +1,0 @@
-// Exercise: implement quicksort algo.
-
