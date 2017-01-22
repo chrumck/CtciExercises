@@ -1,6 +1,6 @@
 // Exercise: implement quicksort algorithm - tests.
 
-package algorithms
+package sorting
 
 import (
 	"testing"

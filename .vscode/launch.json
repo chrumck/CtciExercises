@@ -15,11 +15,11 @@
             "showLog": true
         },
         {
-            "name": "TestAlgorithms",
+            "name": "TestSorting",
             "type": "go",
             "request": "launch",
             "mode": "test",
-            "program": "${workspaceRoot}/algorithms",
+            "program": "${workspaceRoot}/sorting",
             "env": {},
             "args": [],
             "showLog": true
