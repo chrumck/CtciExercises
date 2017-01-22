@@ -1,4 +1,4 @@
-package sorting
+package algorithms
 
 import (
 	"sort"
@@ -6,7 +6,7 @@ import (
 
 // QuickSort sorts given data using QuickSort algorithm
 func QuickSort(data sort.Interface) {
-	// TODO: add shuffle
+	Shuffle(data) // needs to be shuffled to avoid worst case scenario
 	quickSort(data, 0, data.Len()-1)
 }
 
@@ -20,7 +20,7 @@ func quickSort(data sort.Interface, lo, hi int) {
 }
 
 func partition(data sort.Interface, lo, hi int) (j int) {
-	i, j := lo+1, hi
+	i, j := lo + 1, hi
 	for {
 		for i < hi && data.Less(i, lo) {
 			i++
@@ -32,6 +32,8 @@ func partition(data sort.Interface, lo, hi int) (j int) {
 			break
 		}
 		data.Swap(i, j)
+		i++
+		j--
 	}
 	data.Swap(lo, j)
 	return

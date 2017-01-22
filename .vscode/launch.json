@@ -15,11 +15,11 @@
             "showLog": true
         },
         {
-            "name": "Tests",
+            "name": "TestAlgorithms",
             "type": "go",
             "request": "launch",
             "mode": "test",
-            "program": "${workspaceRoot}",
+            "program": "${workspaceRoot}/algorithms",
             "env": {},
             "args": [],
             "showLog": true
