@@ -1,5 +1,3 @@
-// Exercise: implement quicksort algorithm - tests.
-
 package sorting
 
 import (
