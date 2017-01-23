@@ -15,7 +15,8 @@ func main() {
 
 	testLogger.Println("Starting...")
 
-	hashedFiles := scratchpad.HashFilesConcurrent("/media/tomasz/Docs/SoftwareDocs")
+	//hashedFiles := scratchpad.HashFilesConcurrent("/media/tomasz/Docs/SoftwareDocs")
+	hashedFiles := scratchpad.HashFilesConcurrent("C:/_private/SoftwareDocs")
 
 	testLogger.WriteHeapProfile()
 	testLogger.Printf("Total unique files: %v\n", len(hashedFiles))
