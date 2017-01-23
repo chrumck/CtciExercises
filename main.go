@@ -15,7 +15,7 @@ func main() {
 
 	testLogger.Println("Starting...")
 
-	//hashedFiles := scratchpad.HashFilesConcurrent("/media/tomasz/Docs/SoftwareDocs")
+	//hashedFiles := scratchpad.HashFilesConcurrent("/media/tomasz/Docs/SoftwareDocs/SoftDesign")
 	hashedFiles := scratchpad.HashFilesConcurrent("C:/_private/SoftwareDocs")
 
 	testLogger.WriteHeapProfile()
