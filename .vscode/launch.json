@@ -33,6 +33,16 @@
             "env": {},
             "args": [],
             "showLog": true
+        },
+        {
+            "name": "linkedLists",
+            "type": "go",
+            "request": "launch",
+            "mode": "test",
+            "program": "${workspaceRoot}/linkedLists",
+            "env": {},
+            "args": [],
+            "showLog": true
         }
     ]
 }
