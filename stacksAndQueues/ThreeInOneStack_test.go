@@ -4,8 +4,11 @@ import (
 	"testing"
 )
 
+
 func TestPushPop_WhenValuesPushedAndPopped_PushesAndPopsCorrectly(test *testing.T) {
 	stack := ThreeInOneStack{}
+	var sampleValues = []int{100, 101, 102, 103, 104}
+
 	for _, sampleValue := range sampleValues {
 		for i := 0; i <= 2; i++ {
 			stack.Push(i, sampleValue)
