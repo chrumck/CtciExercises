@@ -30,7 +30,7 @@ func (tio *ThreeInOneStack) Pop(stackNumber int) (value interface{}) {
 	tio.itemCount[stackNumber]--
 	itemIndex := tio.itemCount[stackNumber]*stackCount + stackNumber
 	value = tio.stackSlice[itemIndex]
-	//tio.shrinkSlice()
+	tio.shrinkSlice()
 	return
 }
 
@@ -49,18 +49,16 @@ func (tio *ThreeInOneStack) panicIfStackEmpty(stackNumber int) {
 }
 
 func (tio *ThreeInOneStack) growSlice(itemIndex int) {
-	if len(tio.stackSlice) > itemIndex {
-		return
+	if len(tio.stackSlice) <= itemIndex {
+		tio.resizeSlice(itemIndex*2 + 1)
 	}
-	tio.resizeSlice(itemIndex*2 + 1)
 }
 
 func (tio *ThreeInOneStack) shrinkSlice() {
 	maxItemIndex := tio.getMaxItemIndex()
-	if len(tio.stackSlice) < maxItemIndex/4 {
-		return
+	if len(tio.stackSlice) >= maxItemIndex * 4 {
+		tio.resizeSlice(len(tio.stackSlice) / 2)
 	}
-	tio.resizeSlice(maxItemIndex / 2)
 }
 
 func (tio *ThreeInOneStack) resizeSlice(newSize int) {
