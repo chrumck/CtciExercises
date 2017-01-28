@@ -20,6 +20,6 @@ func main() {
 
 	testLogger.WriteHeapProfile()
 	testLogger.Printf("Total unique files: %v\n", len(hashedFiles))
-	testLogger.Printf("Total duplicate occurences count: %v\n", scratchpad.DuplicatesCount(hashedFiles))
+	testLogger.Printf("Total duplicate occurrences count: %v\n", scratchpad.DuplicatesCount(hashedFiles))
 	// scratchpad.PrintDuplicates(hashedFiles, testLogger)
 }
