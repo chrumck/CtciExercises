@@ -62,6 +62,7 @@ func NewFromOrderedSlice(values []sorting.Comparer) (bst *BinarySearchTree) {
 	if hi < 0 {
 		return
 	}
+	
 	bst = &BinarySearchTree{}
 	convertFromSlice(0, hi)
 	return

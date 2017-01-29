@@ -65,6 +65,16 @@
             "showLog": true
         },
         {
+            "name": "bitManipulation",
+            "type": "go",
+            "request": "launch",
+            "mode": "test",
+            "program": "${workspaceRoot}/bitManipulation",
+            "env": {},
+            "args": [],
+            "showLog": true
+        },
+        {
             "name": "moderate",
             "type": "go",
             "request": "launch",
