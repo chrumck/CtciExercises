@@ -4,6 +4,22 @@ import (
 	"testing"
 )
 
+func TestTripleStep_With0Steps_ReturnsCorrectResult(test *testing.T){
+
+	// Arrange
+	sampleTotalSteps := 0
+	expectedWays := 1
+
+	// Act
+	result := TripleStep(sampleTotalSteps)
+
+	// Assert
+	if result != expectedWays {
+		test.Errorf("The result should be %v, but is %v.", expectedWays, result)
+	}
+}
+
+
 func TestTripleStep_WithOneStep_ReturnsCorrectResult(test *testing.T){
 
 	// Arrange
