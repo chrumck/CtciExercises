@@ -85,11 +85,31 @@
             "showLog": true
         },
         {
+            "name": "recursionAndDynamicProgramming",
+            "type": "go",
+            "request": "launch",
+            "mode": "test",
+            "program": "${workspaceRoot}/recursionAndDynamicProgramming",
+            "env": {},
+            "args": [],
+            "showLog": true
+        },
+        {
             "name": "moderate",
             "type": "go",
             "request": "launch",
             "mode": "test",
             "program": "${workspaceRoot}/moderate",
+            "env": {},
+            "args": [],
+            "showLog": true
+        },
+        {
+            "name": "codingChallenge",
+            "type": "go",
+            "request": "launch",
+            "mode": "test",
+            "program": "${workspaceRoot}/codingChallenge",
             "env": {},
             "args": [],
             "showLog": true
